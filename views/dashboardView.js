@@ -7,6 +7,9 @@ export function dashboard(){
     // header
     seccion.appendChild(header());
 
+
+    // footer
+
     return seccion;
 }
 
