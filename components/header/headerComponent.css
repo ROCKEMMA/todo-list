@@ -1,0 +1,39 @@
+header {
+    display: grid;
+    grid-template-columns: 1fr 20rem auto;
+    align-items: center;
+    gap: 1rem;
+}
+
+.div-tareas {
+    max-width: 13rem;
+    height: 100%;
+
+    display: flex;
+    /* Alinear horizontal */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.numero-tareas {
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid #888;
+    font-weight: bold;
+}
+
+.div-logo-usuario {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5px;
+    border: 1px solid rgb(128, 128, 128);
+
+    font-size: 2.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,16 @@
+import { header } from "../components/header/headerComponent.js";
+
+export function dashboard(){
+
+    let seccion = document.createElement('section');
+
+    // header
+    seccion.appendChild(header());
+
+
+    // footer
+
+    return seccion;
+}
+
+document.body.appendChild(dashboard());
