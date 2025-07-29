@@ -17,7 +17,7 @@ export function footer() {
     // Enlace de GitHub
     let enlace = document.createElement('a');
     enlace.className = "footer-github";
-    enlace.href = "#"; // Aquí agregas tu URL manualmente
+    enlace.href = "https://github.com/ROCKEMMA/todo-list"; // Aquí agregas tu URL manualmente
     enlace.innerText = "@github";
     enlace.target = "_blank"; // Abrir en otra pestaña
     divContenido.appendChild(enlace);
