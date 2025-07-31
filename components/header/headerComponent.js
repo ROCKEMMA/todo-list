@@ -7,7 +7,7 @@ export function header() {
 
     // Div de tareas
     let divTareas = document.createElement('div');
-    divTareas.className = "div-tareas";
+    divTareas.className = "div-tareas-activas";
 
     // Texto "Pendientes"
     let spanTexto = document.createElement('span');
