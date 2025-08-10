@@ -11,7 +11,7 @@ export function dashboard(){
             indice: 1,
             titulo: "Proyecto de Investigación sobre Energías Renovables",
             descripcion: "Elaborar un informe detallado sobre los diferentes tipos de energías renovables (solar, eólica, hidráulica y geotérmica). Incluir ventajas, desventajas y una propuesta de implementación local.",
-            estado: "completado",
+            estado: "completada",
             fechaAs: "17/05/2025",
             fechaEn: "30/07/2025",
             integrantes: ["😇", "😊", "😎"]

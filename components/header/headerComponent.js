@@ -1,34 +1,31 @@
-export function header() {
-    let header = document.createElement('header');
+export function header(tareasPendientes = 0, usuarioEmoji = "🧐") {
+  const header = document.createElement("header");
 
-    let h1 = document.createElement('h1');
-    h1.innerText = "✏️ Todo-List";
-    header.appendChild(h1);
+  // Título
+  const h1 = document.createElement("h1");
+  h1.textContent = "✏️ Todo-List";
+  header.appendChild(h1);
 
-    // Div de tareas
-    let divTareas = document.createElement('div');
-    divTareas.className = "div-tareas-activas";
+  // Sección tareas activas
+  const divTareas = document.createElement("div");
+  divTareas.className = "div-tareas-activas";
 
-    // Texto "Pendientes"
-    let spanTexto = document.createElement('span');
-    spanTexto.innerText = "Pendientes";
+  const spanTexto = document.createElement("span");
+  spanTexto.textContent = "Pendientes";
 
-    // Recuadro con el número 5
-    let spanNumero = document.createElement('span');
-    spanNumero.className = "numero-tareas";
-    spanNumero.innerText = "5";
+  const spanNumero = document.createElement("span");
+  spanNumero.className = "numero-tareas";
+  spanNumero.textContent = tareasPendientes;
 
-    // Agregar ambos al div-tareas
-    divTareas.appendChild(spanTexto);
-    divTareas.appendChild(spanNumero);
+  divTareas.append(spanTexto, spanNumero);
+  header.appendChild(divTareas);
 
-    header.appendChild(divTareas);
+  // Avatar usuario
+  const divLogoUsuario = document.createElement("div");
+  divLogoUsuario.className = "div-logo-usuario";
+  divLogoUsuario.textContent = usuarioEmoji;
 
-    // Div logo usuario
-    let divLogoUsuario = document.createElement('div');
-    divLogoUsuario.className = "div-logo-usuario";
-    divLogoUsuario.innerText = "🧐";
-    header.appendChild(divLogoUsuario);
+  header.appendChild(divLogoUsuario);
 
-    return header;
+  return header;
 }

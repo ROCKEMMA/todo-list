@@ -1,54 +1,64 @@
-export function tarea(indice, titulo, estado, fechaAs, fechaEn, listaIntegrantes) {
-    // Contenedor principal
-    let div = document.createElement('div');
-    div.className = "tarea";
+export function tarea(
+  indice,
+  titulo,
+  estado,
+  fechaAs,
+  fechaEn,
+  listaIntegrantes = []
+) {
+  // Contenedor principal
+  const div = document.createElement("div");
+  div.className = "tarea";
 
-    // Número de la tarea
-    let divNumero = document.createElement('div');
-    divNumero.className = "div-numero";
-    divNumero.textContent = indice;
-    div.appendChild(divNumero);
+  // Número de tarea
+  const divNumero = document.createElement("div");
+  divNumero.className = "div-numero";
+  divNumero.textContent = indice;
+  div.appendChild(divNumero);
 
-    // Título de la tarea
-    let tituloTarea = document.createElement('h3');
-    tituloTarea.className = "tarea-titulo";
-    tituloTarea.textContent = titulo;
-    div.appendChild(tituloTarea);
+  // Título
+  const tituloTarea = document.createElement("h3");
+  tituloTarea.className = "tarea-titulo";
+  tituloTarea.textContent = titulo;
+  div.appendChild(tituloTarea);
 
-    // Estado de la tarea
-    let divEstado = document.createElement('div');
-    divEstado.className = `tarea-estado ${estado.toLowerCase()}`;
-    divEstado.textContent = estado;
-    div.appendChild(divEstado);
+  // Estado
+  const divEstado = document.createElement("div");
+  divEstado.className = `tarea-estado ${estado
+    .toLowerCase()
+    .replace(" ", "-")}`;
+  divEstado.textContent = estado;
+  div.appendChild(divEstado);
 
-    // Fecha de asignación
-    let fechaAsignacion = document.createElement('span');
-    fechaAsignacion.className = "tarea-fecha-asignacion";
-    fechaAsignacion.textContent = fechaAs;
-    div.appendChild(fechaAsignacion);
+  // Fecha asignación
+  const fechaAsignacion = document.createElement("span");
+  fechaAsignacion.className = "tarea-fecha";
+  fechaAsignacion.textContent = fechaAs;
+  div.appendChild(fechaAsignacion);
 
-    // Fecha de entrega
-    let fechaEntrega = document.createElement('span');
-    fechaEntrega.className = "tarea-fecha-entrega";
-    fechaEntrega.textContent = fechaEn;
-    div.appendChild(fechaEntrega);
+  // Fecha entrega
+  const fechaEntrega = document.createElement("span");
+  fechaEntrega.className = "tarea-fecha";
+  fechaEntrega.textContent = fechaEn;
+  div.appendChild(fechaEntrega);
 
-    // Listado de integrantes
-    let divIntegrantes = document.createElement('div');
-    divIntegrantes.className = "tarea-integrantes";
-    listaIntegrantes.forEach(integrante => {
-        let imgIntegrante = document.createElement('div');
-        imgIntegrante.className = "integrante-icono";
-        imgIntegrante.textContent = integrante; // puedes reemplazar por <img> si son imágenes
-        divIntegrantes.appendChild(imgIntegrante);
-    });
-    div.appendChild(divIntegrantes);
+  // Integrantes
+  const divIntegrantes = document.createElement("div");
+  divIntegrantes.className = "tarea-integrantes";
+  listaIntegrantes.forEach((integrante) => {
+    const icono = document.createElement("div");
+    icono.className = "integrante-icono";
+    icono.textContent = integrante; // si tienes imágenes aquí puedes cambiarlo
+    divIntegrantes.appendChild(icono);
+  });
+  div.appendChild(divIntegrantes);
 
-    // Botón eliminar
-    let btnEliminar = document.createElement('div');
-    btnEliminar.className = "tarea-eliminar";
-    btnEliminar.innerHTML = "❌";
-    div.appendChild(btnEliminar);
+  // Botón eliminar
+  const btnEliminar = document.createElement("button");
+  btnEliminar.className = "tarea-eliminar";
+  btnEliminar.setAttribute("aria-label", "Eliminar tarea");
+  btnEliminar.textContent = "❌";
+  div.appendChild(btnEliminar);
 
-    return div;
+  return div;
 }
