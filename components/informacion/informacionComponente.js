@@ -22,15 +22,15 @@ export function informacion(tarea) {
 
   // Estado
   const divEstado = document.createElement("div");
-  divEstado.className = `estado-tarea ${tarea.estado
+  divEstado.className = `estado-tarea ${tarea.estado_tarea
     .toLowerCase()
     .replace(" ", "-")}`;
-  divEstado.innerText = tarea.estado;
+  divEstado.innerText = tarea.estado_tarea;
 
   // Título
   const titulo = document.createElement("h3");
   titulo.className = "titulo-asignacion";
-  titulo.innerText = tarea.titulo;
+  titulo.innerText = tarea.nombre;
 
   // Descripción
   const descripcion = document.createElement("p");
@@ -46,19 +46,18 @@ export function informacion(tarea) {
   const divIntegrantes = document.createElement("div");
   divIntegrantes.className = "div-integrantes";
 
-  tarea.integrantes.forEach((icono) => {
+/*   tarea.integrantes.forEach((icono) => {
     const divIcono = document.createElement("div");
     divIcono.className = "integrante";
     divIcono.innerText = icono;
     divIntegrantes.appendChild(divIcono);
-  });
+  }); */
 
   divInformacion.append(
     divEstado,
     titulo,
     descripcion,
-    spanIntegrantes,
-    divIntegrantes
+    spanIntegrantes
   );
 
   div.append(divBotones, divInformacion);
